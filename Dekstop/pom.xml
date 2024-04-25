@@ -21,6 +21,8 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+
+
         <!-- CDI !-->
         <dependency>
             <groupId>org.jboss.weld.se</groupId>

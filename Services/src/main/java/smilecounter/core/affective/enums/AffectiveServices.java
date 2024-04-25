@@ -9,9 +9,9 @@ import java.util.List;
 
 public enum AffectiveServices {
     OPENIMAJ("OpenIMAJ", null, null),
-    OPEN_CV("OpenCV", Collections.singletonList(Core.NATIVE_LIBRARY_NAME), Collections.singletonList("libopencv_java330")),
+    OPEN_CV("OpenCV", Collections.singletonList(Core.NATIVE_LIBRARY_NAME), Collections.singletonList("opencv_java490")),
     LUXAND("Luxand", Collections.singletonList(getFaceSDKLibName()), Collections.singletonList(getFaceSDKLibName())),
-    CUSTOM("Custom", Arrays.asList(Core.NATIVE_LIBRARY_NAME, getFaceSDKLibName()), Arrays.asList("libopencv_java330", getFaceSDKLibName()));
+    CUSTOM("Custom", Arrays.asList(Core.NATIVE_LIBRARY_NAME, getFaceSDKLibName()), Arrays.asList("opencv_java490", getFaceSDKLibName()));
 
     private static String OS;
 
