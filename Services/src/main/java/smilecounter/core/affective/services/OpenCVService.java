@@ -15,14 +15,16 @@ import smilecounter.core.affective.model.Smile;
 import smilecounter.core.affective.utils.AffectiveLibsLoader;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.opencv.imgcodecs.Imgcodecs.imwrite;
-
 @ApplicationScoped
-public class OpenCVService implements AffectiveService{
+public class OpenCVService implements AffectiveService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     private CascadeClassifier faceDetector;
@@ -42,14 +44,14 @@ public class OpenCVService implements AffectiveService{
         }
     }
 
-    private void loadDetectors(){
+    private void loadDetectors() {
         faceDetector = loadClassifier(HaarClassifiers.FRONTAL_FACE);
         smileDetector = loadClassifier(HaarClassifiers.SMILE);
         mouthDetector = loadClassifier(HaarClassifiers.MOUTH);
         noseDetector = loadClassifier(HaarClassifiers.NOSE);
     }
 
-    public void switchToLBP(){
+    public void switchToLBP() {
         faceDetector = loadClassifier(HaarClassifiers.FRONTAL_FACE_LBP);
     }
 
@@ -70,9 +72,6 @@ public class OpenCVService implements AffectiveService{
                 result.add(face);
             }
         }
-        else {
-            result = new ArrayList<>();
-        }
 
         return result;
     }
@@ -82,7 +81,7 @@ public class OpenCVService implements AffectiveService{
         return AffectiveServices.OPEN_CV;
     }
 
-    public List<Face> simpleSmileDetection(BufferedImage image){
+    public List<Face> simpleSmileDetection(BufferedImage image) {
         List<Face> result = new ArrayList<>();
 
         Mat img = convertImageToMat(image);
@@ -90,14 +89,14 @@ public class OpenCVService implements AffectiveService{
             Mat grayImg = sanitizeMat(img);
             Rect[] foundSmiles = detectSimpleSmiles(smileDetector, grayImg);
 
-            for(Rect rect : foundSmiles){
+            for (Rect rect : foundSmiles) {
                 Face face = new Face();
                 face.setSmile(getSmile(rect, face, 1));
                 result.add(face);
             }
 
             Rect[] foundMouths = detectSimpleSmiles(mouthDetector, grayImg);
-            for(Rect rect : foundMouths){
+            for (Rect rect : foundMouths) {
                 Face face = new Face();
                 face.setSmile(getSmile(rect, face, 0));
                 result.add(face);
@@ -107,7 +106,7 @@ public class OpenCVService implements AffectiveService{
         return result;
     }
 
-    private CascadeClassifier loadClassifier(HaarClassifiers haarClassifier){
+    private CascadeClassifier loadClassifier(HaarClassifiers haarClassifier) {
         LOGGER.debug("Loading classifier {} (from {})...", haarClassifier, haarClassifier.getResourcesPath());
 
         String classifierAbsolutePath;
@@ -116,11 +115,10 @@ public class OpenCVService implements AffectiveService{
             classifierAbsolutePath = haarClassifier.getExternalPath();
             classifier = new CascadeClassifier(classifierAbsolutePath);
             boolean loadedSuccessfully = classifier.load(classifierAbsolutePath);
-            if(!loadedSuccessfully){
-                throw new Exception("Classifier wasn't loaded sucessfully!");
+            if (!loadedSuccessfully) {
+                throw new Exception("Classifier wasn't loaded successfully!");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             LOGGER.error("Error during loading classifier {}", haarClassifier.getResourcesPath(), e);
         }
 
@@ -150,7 +148,7 @@ public class OpenCVService implements AffectiveService{
         double smileConfidence = 1;
         Smile smile = null;
         Rect[] foundSmiles = detectSmilesWithClassifier(smileDetector, mat);
-        if(foundSmiles.length == 0){
+        if (foundSmiles.length == 0) {
             foundSmiles = detectSmilesWithClassifier(mouthDetector, mat);
             smileConfidence = 0;
         }
@@ -177,28 +175,23 @@ public class OpenCVService implements AffectiveService{
                 Face face = getFace(rect);
                 Mat faceMat = new Mat(grayImg, rect);
                 HumanFeature nose = detectNose(faceMat, face);
-                /*Rect noseRect = new Rect(rect.x, (int)nose.getY(), rect.width, rect.height);
-                Mat underNose = new Mat(grayImg, noseRect);
-                Smile smile = detectSmile(underNose, face);
-                face.setSmile(smile);*/
                 face.setNose(nose);
                 result.add(face);
 
-                Rect noseRect = new Rect((int)nose.getX(), (int)nose.getY(),(int) nose.getWidth(), (int)nose.getHeight());
+                Rect noseRect = new Rect((int) nose.getX(), (int) nose.getY(), (int) nose.getWidth(), (int) nose.getHeight());
                 Mat underNose = new Mat(grayImg, noseRect);
-                imwrite( "E:\\Projekty\\Magisterka\\smiles-test\\results\\detections\\nose\\nose.jpg", underNose);
-                imwrite( "E:\\Projekty\\Magisterka\\smiles-test\\results\\detections\\nose\\nose2.jpg", faceMat);
-                int a = 5;
+                BufferedImage underNoseImage = convertMatToImage(underNose);
+                saveImage(underNoseImage, "E:\\Projekty\\Magisterka\\smiles-test\\results\\detections\\nose\\nose.jpg");
+
+                BufferedImage faceMatImage = convertMatToImage(faceMat);
+                saveImage(faceMatImage, "E:\\Projekty\\Magisterka\\smiles-test\\results\\detections\\nose\\nose2.jpg");
             }
-        }
-        else {
-            result = new ArrayList<>();
         }
 
         return result;
     }
 
-    private HumanFeature getFeature(Rect rect, HumanFeature parent){
+    private HumanFeature getFeature(Rect rect, HumanFeature parent) {
         HumanFeature feature = new HumanFeature();
         feature.setHeight(rect.height);
         feature.setWidth(rect.width);
@@ -207,17 +200,17 @@ public class OpenCVService implements AffectiveService{
         return feature;
     }
 
-    private HumanFeature detectNose(Mat mat, Face face){
+    private HumanFeature detectNose(Mat mat, Face face) {
         HumanFeature nose = null;
         Rect[] foundNoses = detectNosesWithClassifier(mat);
         LOGGER.debug("Found {} noses - {} ({})", foundNoses.length, foundNoses[0], face.toString());
-        if(foundNoses.length > 0){
+        if (foundNoses.length > 0) {
             nose = getFeature(foundNoses[0], face);
         }
         return nose;
     }
 
-    private Rect[] detectNosesWithClassifier(Mat mat){
+    private Rect[] detectNosesWithClassifier(Mat mat) {
         MatOfRect noseDetections = new MatOfRect();
         noseDetector.detectMultiScale(mat, noseDetections, 1.1, 5,
                 Objdetect.CASCADE_SCALE_IMAGE,
@@ -226,7 +219,7 @@ public class OpenCVService implements AffectiveService{
         return noseDetections.toArray();
     }
 
-    private Rect[] detectSmilesWithClassifier(CascadeClassifier classifier, Mat mat){
+    private Rect[] detectSmilesWithClassifier(CascadeClassifier classifier, Mat mat) {
         MatOfRect smileDetections = new MatOfRect();
         classifier.detectMultiScale(mat, smileDetections, 1.05, 5,
                 Objdetect.CASCADE_SCALE_IMAGE | Objdetect.CASCADE_FIND_BIGGEST_OBJECT,
@@ -235,7 +228,7 @@ public class OpenCVService implements AffectiveService{
         return smileDetections.toArray();
     }
 
-    private Rect[] detectSimpleSmiles(CascadeClassifier classifier, Mat mat){
+    private Rect[] detectSimpleSmiles(CascadeClassifier classifier, Mat mat) {
         MatOfRect smileDetections = new MatOfRect();
         classifier.detectMultiScale(mat, smileDetections, 1.05, 5,
                 Objdetect.CASCADE_SCALE_IMAGE,
@@ -271,5 +264,24 @@ public class OpenCVService implements AffectiveService{
                 Objdetect.CASCADE_SCALE_IMAGE,
                 new Size(30, 30), new Size(img.width(), img.height()));
         return faceDetections;
+    }
+
+    private BufferedImage convertMatToImage(Mat mat) {
+        int type = BufferedImage.TYPE_BYTE_GRAY;
+        if (mat.channels() > 1) {
+            type = BufferedImage.TYPE_3BYTE_BGR;
+        }
+        BufferedImage image = new BufferedImage(mat.width(), mat.height(), type);
+        mat.get(0, 0, ((DataBufferByte) image.getRaster().getDataBuffer()).getData());
+        return image;
+    }
+
+    private void saveImage(BufferedImage image, String filePath) {
+        File output = new File(filePath);
+        try {
+            ImageIO.write(image, "jpg", output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
