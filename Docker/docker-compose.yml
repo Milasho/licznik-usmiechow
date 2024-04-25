@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  backend:
+    container_name: smilecounter-backend
+    hostname: smilecounter-backend
+    build: backend
+    ports:
+      - '8080:8080'
+      - '9990:9990'
+      - '8787:8787'
+      - '8443:8443'
+    environment:
+      - DATABASE=mongodb://smilecounter-db:27017/smilecounter
+      - LUXAND_KEY=pM7B5eyFA7i5v5vPvdPVssmkoowXNajiPbuBC0+ekCVS1bVFVt/6BzmBkKd3kxNqrtdEHxUwpmgu4fe8zfwtqFXKcA8ePNC2vST4c5PcVVYUso3Hh3KaBIhIxEBBzLjseJW6FLEw1RZYPVCrLbvhqGUJw46EOM9onbF8H5OOvSQ=
+  database:
+    container_name: smilecounter-db
+    hostname: smilecounter-db
+    build: mongodb
+    ports:
+      - '27017:27017'

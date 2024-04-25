@@ -1,0 +1,4 @@
+<div class="smiles-counter" ng-switch="::ctrl.type">
+	<h3 translate="smilesCounter.global.title" ng-switch-default></h3>
+	<span class="digit" ng-repeat="digit in ctrl.getSmilesCount() track by $index" ng-bind="digit"></span>
+</div>

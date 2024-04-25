@@ -1,0 +1,265 @@
+<div class="test-summary">
+    <section class="screen-part tinted" ng-if="false">
+        <div class="row">
+            <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-left">
+                <h3 translate="webcam.page.summary.title"></h3>
+                <div class="test-result" ng-repeat="service in ::ctrl.servicesOrder">
+                    <h4 translate="webcam.page.summary.services.name" translate-value-index="{{$index + 1}}"></h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.timeSpent"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span translate="webcam.page.summary.services.timeSpent.value"
+                                  translate-value-ms='{{::ctrl.statistics[service].timeSpent}}'></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.averageResponseTime"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span translate="webcam.page.summary.services.averageResponseTime.value"
+                                  translate-value-ms='{{::ctrl.statistics[service].averageResponseTime}}'></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.detectedSmiles"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span ng-bind="::ctrl.statistics[service].detectedSmiles"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.realSmiles"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span ng-bind="::ctrl.statistics[service].smiling"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.fakeSmiles"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span ng-bind="::ctrl.statistics[service].notSmiling"></span>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-if="::ctrl.statistics[service].detectedSmiles - ctrl.statistics[service].smiling - ctrl.statistics[service].notSmiling > 0">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <span translate="webcam.page.summary.services.notConfirmedSmiles"></span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                            <span ng-bind="::ctrl.statistics[service].detectedSmiles - ctrl.statistics[service].smiling - ctrl.statistics[service].notSmiling"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+        </div>
+    </section>
+    <section class="screen-part">
+        <div class="row">
+            <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-left">
+                <form class="horizontal" name="servicesSummaryForm">
+                    <h3 translate="webcam.page.summary.form.title"></h3>
+                    <p translate="webcam.page.summary.form.info"></p>
+
+                    <section class="service-form" ng-repeat="service in ::ctrl.servicesOrder">
+                        <h4 translate="webcam.page.summary.services.name" translate-value-index="{{$index + 1}}"></h4>
+
+                        <fieldset class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.generalDetection"></legend>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="{{::service}}.generalDetection"
+                                           ng-required="true"
+                                           value="0" checked ng-model="ctrl.formData[service].generalDetection">
+                                    <span translate="webcam.page.summary.form.answers.yes"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="{{::service}}.generalDetection"
+                                           ng-required="true"
+                                           value="1" ng-model="ctrl.formData[service].generalDetection">
+                                    <span translate="webcam.page.summary.form.answers.ratherYes"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="{{::service}}.generalDetection"
+                                           ng-required="true"
+                                           value="2" ng-model="ctrl.formData[service].generalDetection">
+                                    <span translate="webcam.page.summary.form.answers.ratherNot"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="{{::service}}.generalDetection"
+                                           ng-required="true"
+                                           value="3" ng-model="ctrl.formData[service].generalDetection">
+                                    <span translate="webcam.page.summary.form.answers.no"></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.smileTypes"></legend>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="{{::service}}.smileTypes.wideOpen"
+                                           value="0"  ng-model="ctrl.formData[service].smileTypes.wideOpen"
+                                           ng-disabled="ctrl.formData[service].smileTypes.nothing">
+                                    <span translate="webcam.page.summary.form.answers.smileTypes.wideOpen"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="{{::service}}.smileTypes.open"
+                                           value="1" ng-model="ctrl.formData[service].smileTypes.open"
+                                           ng-disabled="ctrl.formData[service].smileTypes.nothing">
+                                    <span translate="webcam.page.summary.form.answers.smileTypes.open"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="{{::service}}.smileTypes.closed"
+                                           value="2" ng-model="ctrl.formData[service].smileTypes.closed"
+                                           ng-disabled="ctrl.formData[service].smileTypes.nothing">
+                                    <span translate="webcam.page.summary.form.answers.smileTypes.closed"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="{{::service}}.smileTypes.nothing"
+                                           value="3" ng-model="ctrl.formData[service].smileTypes.nothing"
+                                           ng-disabled="ctrl.formData[service].smileTypes.closed || ctrl.formData[service].smileTypes.open || ctrl.formData[service].smileTypes.wideOpen">
+                                    <span translate="webcam.page.summary.form.answers.smileTypes.nothing"></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.additionalData" for="{{::service}}.additionalInformations"></legend>
+                            <textarea class="form-control" id="{{::service}}.additionalInformations" rows="5" cols="200"
+                                      ng-model="ctrl.formData[service].additionalData"></textarea>
+                        </div>
+                    </section>
+
+                    <section class="general-questions">
+                        <h4 translate="webcam.page.summary.form.fields.generalQuestions"></h4>
+
+                        <fieldset class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.gender"></legend>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender"
+                                           ng-required="true"
+                                           value="0" checked ng-model="ctrl.formData.gender">
+                                    <span translate="webcam.page.summary.form.answers.gender.man"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender"
+                                           ng-required="true"
+                                           value="1" ng-model="ctrl.formData.gender">
+                                    <span translate="webcam.page.summary.form.answers.gender.woman"></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <legend for="age" translate="webcam.page.summary.form.fields.age"></legend>
+                            <input type="number" min="10" max="99" class="form-control" id="age" placeholder="Age" ng-model="ctrl.formData.age">
+                        </div>
+
+                        <fieldset class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.groupingSmiles"></legend>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="groupingSmiles"
+                                           ng-required="true"
+                                           value="0" checked ng-model="ctrl.formData.groupingSmiles">
+                                    <span translate="webcam.page.summary.form.answers.yes"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="groupingSmiles"
+                                           ng-required="true"
+                                           value="1" ng-model="ctrl.formData.groupingSmiles">
+                                    <span translate="webcam.page.summary.form.answers.ratherYes"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="groupingSmiles"
+                                           ng-required="true"
+                                           value="2" ng-model="ctrl.formData.groupingSmiles">
+                                    <span translate="webcam.page.summary.form.answers.ratherNot"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="groupingSmiles"
+                                           ng-required="true"
+                                           value="3" ng-model="ctrl.formData.groupingSmiles">
+                                    <span translate="webcam.page.summary.form.answers.no"></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <legend translate="webcam.page.summary.form.fields.affectiveFuture"></legend>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="affectiveFuture" ng-required="true"
+                                           value="0" checked ng-model="ctrl.formData.affectiveFuture">
+                                    <span translate="webcam.page.summary.form.answers.affectiveFuture.yes"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="affectiveFuture" ng-required="true"
+                                           value="1" ng-model="ctrl.formData.affectiveFuture">
+                                    <span translate="webcam.page.summary.form.answers.affectiveFuture.maybe"></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="affectiveFuture" ng-required="true"
+                                           value="2" ng-model="ctrl.formData.affectiveFuture">
+                                    <span translate="webcam.page.summary.form.answers.affectiveFuture.no"></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group" ng-if="ctrl.formData.affectiveFuture == 0">
+                            <legend for="affectiveFutureInformations" translate="webcam.page.summary.form.fields.sayMore"></legend>
+                            <textarea class="form-control" id="affectiveFutureInformations" rows="5" cols="200" ng-required="true"
+                                      ng-model="ctrl.formData.additionalData"></textarea>
+                        </div>
+                    </section>
+
+                    <div class="buttons text-center">
+                        <button type="button" class="button button-action" ng-click="ctrl.sendFormData()">
+                            <span translate="webcam.page.summary.form.buttons.send"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+        </div>
+    </section>
+</div>

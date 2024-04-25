@@ -1,0 +1,55 @@
+<section class="screen-part tinted">
+    <div class="row">
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-left">
+            <h3 translate="webcam.page.intro.title"></h3>
+            <p translate="webcam.page.intro.mainInfo"></p>
+        </div>
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+    </div>
+
+    <button type="button" class="button button-empty" ng-click="ctrl.startTesting()">
+        <span translate="webcam.page.intro.buttons.start"></span>
+    </button>
+</section>
+<section class="screen-part text-left">
+    <div class="row">
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-justify">
+            <h3 translate="webcam.page.intro.description.title"></h3>
+            <p translate="webcam.page.intro.testSummary" translate-value-services-count="{{ctrl.servicesOrder.length}}"></p>
+        </div>
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+    </div>
+</section>
+<section class="screen-part">
+    <div class="row">
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <img class="image fit" src="images/webcam/preview.jpg" alt=""/>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 text-justify">
+            <h5 translate="webcam.page.intro.description.preinfo"></h5>
+            <p translate="webcam.page.intro.description.webcam"></p>
+            <p translate="webcam.page.intro.description.detectedSmiles"></p>
+            <h5 translate="webcam.page.intro.description.yourTask"></h5>
+            <p translate="webcam.page.intro.description.taskList"></p>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2"></div>
+    </div>
+</section>
+<section class="screen-part tinted">
+    <div class="row">
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-justify">
+            <h3 translate="webcam.page.intro.services.title"></h3>
+            <p translate="webcam.page.intro.services.summary" translate-value-services-count="{{ctrl.servicesOrder.length}}"></p>
+        </div>
+        <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+    </div>
+    <div class="services-list">
+        <a href="http://opencv.org/" target="_blank" title="OpenCV"><img src="images/webcam/opencv.png" alt="OpenCV"/></a>
+        <a href="https://www.luxand.com/facesdk/" target="_blank" title="Luxand"><img src="images/webcam/luxand.png" alt="Luxand"/></a>
+    </div>
+</section>
+

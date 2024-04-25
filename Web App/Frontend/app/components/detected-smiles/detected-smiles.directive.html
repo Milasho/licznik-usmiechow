@@ -1,0 +1,49 @@
+<div class="detected-smiles">
+	<div class="row">
+		<div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
+		<div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+			<h2 class="text-left" translate="detectedSmiles.title"></h2>
+
+			<section class="detected-smiles-stats text-left">
+				<p translate="detectedSmiles.stats.info"></p>
+				<ul>
+					<li translate="detectedSmiles.stats.today" translate-value-smiles="{{ctrl.smilesToday}}"></li>
+					<li translate="detectedSmiles.stats.week" translate-value-smiles="{{ctrl.smilesWeek}}"></li>
+					<li translate="detectedSmiles.stats.month" translate-value-smiles="{{ctrl.smilesMonth}}"></li>
+				</ul>
+				<p translate="detectedSmiles.ranking.info"></p>
+				<ul>
+					<li ng-repeat="localisation in ctrl.bestLocalisations"
+							translate="detectedSmiles.ranking.position" translate-value-place="{{::$index + 1}}"
+						translate-value-name="{{::localisation._id}}" translate-value-smiles="{{::localisation.smiles}}"></li>
+				</ul>
+				<p translate="detectedSmiles.stats.photos"></p>
+			</section>
+
+			<h3  translate="detectedSmiles.noPhotos" ng-if="(!ctrl.detectedSmiles || ctrl.detectedSmiles.length == 0) && !ctrl.imagesLoading"></h3>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="smile in ctrl.detectedSmiles | limitTo: ctrl.maxImages">
+					<div class="detected-smile" ng-style="::{'background-image' : 'url(' + smile.link + ')'}">
+						<div class='smile-info'>
+							<h5 ng-if="::smile.localisation">
+								<span translate="detectedSmiles.info.localisation"></span>
+								<span ng-bind="::smile.localisation"></span>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<spinner ng-if="ctrl.imagesLoading"></spinner>
+			
+			<div class="buttons">
+				<button class="button dark button-empty" ng-if="ctrl.showMoreButton()" ng-click="ctrl.showAll()">
+					<span translate="detectedSmiles.buttons.showMore" translate-value-count="{{ctrl.getSmilesCount()}}"></span>
+					<span class="glyphicon glyphicon-menu-right"></span>
+				</button>
+			</div>
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
+	</div>
+</div>

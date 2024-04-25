@@ -1,0 +1,59 @@
+<div class="smiles-chart" ng-switch="ctrl.chartType">
+	<span ng-switch-default>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
+			<div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+				<h3 class='text-left' translate="smiles.chart.smiles.title" translate-value-days="{{ctrl.daysBefore}}"></h3>
+
+				<spinner ng-if="ctrl.loading"></spinner>
+				<canvas ng-if="!ctrl.loading && ctrl.charts.smiles.content" class="chart chart-line" chart-data="ctrl.charts.smiles.data"
+						chart-colors="ctrl.charts.smiles.colors" chart-options="ctrl.charts.smiles.options"
+						chart-labels="ctrl.charts.smiles.labels"></canvas>
+				<p ng-if="!ctrl.loading && !ctrl.charts.smiles.content" translate="smiles.chart.smiles.noSmiles"></p>
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
+		</div>
+		<div class="row flex-row">
+			<div class="hidden-xs hidden-sm col-sm-1 col-md-2 col-lg-2"></div>
+			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+				<h3 translate="smiles.chart.photos.title"></h3>
+
+				<spinner ng-if="ctrl.loading"></spinner>
+				<div class="chart-smaller">
+					<canvas class="chart chart-doughnut"
+							chart-data="ctrl.charts.photos.data" chart-options="ctrl.charts.photos.options"
+							chart-colors="ctrl.charts.services.colors"
+							chart-labels="ctrl.charts.photos.labels">
+					</canvas>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+				<h3 translate="smiles.chart.services.title"></h3>
+
+				<spinner ng-if="ctrl.loading"></spinner>
+				<div>
+					<canvas class="chart chart-radar"
+							chart-data="ctrl.charts.services.data" chart-options="ctrl.charts.services.options"
+							chart-series="ctrl.charts.services.series" chart-colors="ctrl.charts.services.colors"
+							chart-labels="ctrl.charts.services.labels" chart-legend = "true">
+					</canvas>
+				</div>
+			</div>
+			<div class="hidden-xs hidden-sm col-md-1 col-lg-2"></div>
+		</div>
+	</span>
+	<span ng-switch-when="servicesTests">
+		<div>
+			<h3 translate="smiles.chart.services.title"></h3>
+
+			<spinner ng-if="ctrl.loading"></spinner>
+			<div>
+				<canvas class="chart chart-radar"
+						chart-data="ctrl.charts.services.data" chart-options="ctrl.charts.services.options"
+						chart-series="ctrl.charts.services.series" chart-colors="ctrl.charts.services.colors"
+						chart-labels="ctrl.charts.services.labels" chart-legend = "true">
+				</canvas>
+			</div>
+		</div>
+	</span>
+</div>

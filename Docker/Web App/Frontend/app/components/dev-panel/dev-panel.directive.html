@@ -1,0 +1,27 @@
+<div class='dev-panel hidden-xs hidden-sm'>
+	<button type="button" class="control-button" ng-click="ctrl.toggleEnabled()" 
+		title="{{'dev-panel.disableButton.' + (ctrl.panelEnabled ? 'disable' : 'enable') + '.title' | translate}}">
+		<span class='glyphicon' ng-class="{'glyphicon glyphicon-play' : !ctrl.panelEnabled, 'glyphicon glyphicon-pause' : ctrl.panelEnabled}"></span>
+	</button>
+	<span ng-class="{'disabled' : !ctrl.panelEnabled}">
+		<button type="button" class="control-button" ng-click="ctrl.refresh()" 
+			ng-attr-title="{{'dev-panel.refreshButton.title' | translate}}"
+			ng-disabled="!ctrl.panelEnabled">
+			<span class='glyphicon glyphicon-refresh' ng-class="{'glyphicon-spin' : ctrl.isLoading()}"></span>
+		</button>
+		
+		<span class='counter' 
+			ng-class="{'warning' : ctrl.watchers > 700}"
+			ng-attr-title="{{'dev-panel.watchersCount.title' | translate}}">
+			<span class='glyphicon glyphicon-eye-open'></span>
+			<span ng-bind="ctrl.watchers"></span>
+			<span class='in-parenthesis' ng-bind="ctrl.watchersWithoutDuplicates"></span>
+		</span>
+		<span class='counter' 
+			ng-class="{'warning' : ctrl.domElements > 1000}"
+			ng-attr-title="{{'dev-panel.domElements.title' | translate}}">
+			<span class='glyphicon glyphicon-tree-deciduous'></span>
+			<span ng-bind="ctrl.domElements"></span>
+		</span>
+	</span>
+</div>

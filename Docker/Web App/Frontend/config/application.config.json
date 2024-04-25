@@ -1,0 +1,16 @@
+{
+	"html5Mode" : true,
+	"languages" : ["en", "pl"],
+	"defaultAlertsDisplayTimeInSec" : 0,
+	"demoVersion" : false,
+	"debugVersion" : true,
+	"restApi" : "http://smilecounter-backend:8080/smilecounter/rest",
+	"supportedSystems" : ["Windows"],
+	"refreshTime" : 10,
+	"servicesToTest" : ["LUXAND", "OPEN_CV", "CUSTOM"],
+	"snapshotSendInterval" : 600,
+	"snapshotSendSize" : {"width" : 320, "height" : 240},
+	"previousFramesInSnapshotDetecting" : 1,
+	"maxFramesRequest" : 10,
+	"homePageBackground" : "../images/home/background.jpg"
+}

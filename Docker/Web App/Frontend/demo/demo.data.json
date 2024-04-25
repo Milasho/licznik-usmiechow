@@ -1,0 +1,13 @@
+{
+	"detectedSmiles" : [
+		{"link" : "demo/images/woman-1.jpg", "localisation": "Poland"},
+		{"link" : "demo/images/woman-2.jpg", "localisation": "United Kingdom"},
+		{"link" : "demo/images/man-1.jpg", "localisation": "USA"},
+		{"link" : "demo/images/woman-3.jpg", "localisation": "Poland"},
+		{"link" : "demo/images/man-2.jpg", "localisation": "Holland"},
+		{"link" : "demo/images/woman-4.jpg", "localisation": "Germany"},
+		{"link" : "demo/images/woman-5.jpg", "localisation": "Poland"},
+		{"link" : "demo/images/man-3.jpg", "localisation": "Poland"},
+		{"link" : "demo/images/man-4.jpg", "localisation": "Poland"}
+	]
+}

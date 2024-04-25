@@ -1,0 +1,73 @@
+BorderPane{
+    -fx-background-color: #f6f6f6;
+}
+
+Button{
+    -fx-cursor: hand;
+    -fx-border-color: #0a2133;
+    -fx-border-width: 3px;
+    -fx-background-color: transparent;
+    -fx-font-size: 15px;
+    -fx-pref-width: 200px;
+    -fx-text-fill: #0a2133;
+    -fx-padding: 10px 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+Button:hover{
+    -fx-effect: dropshadow(gaussian, #acacac, 15, 0.5, 0, 0);
+}
+
+ComboBox{
+    -fx-cursor: hand;
+    -fx-border-color: #0a2133;
+    -fx-border-width: 1px;
+    -fx-background-color: transparent;
+    -fx-pref-width: 200px;
+    -fx-padding: 10px 5px;
+    -fx-text-fill: #0a2133;
+}
+
+TextField{
+    -fx-border-color: #0a2133;
+    -fx-border-width: 1px;
+    -fx-background-color: #fff;
+    -fx-pref-width: 200px;
+    -fx-padding: 10px 5px;
+    -fx-text-fill: #0a2133;
+}
+
+TextField:hover, TextField:focused{
+    -fx-effect: dropshadow(gaussian, #acacac, 15, 0.5, 0, 0);
+}
+
+.settingsLabel {
+    -fx-pref-width: 200px;
+    -fx-text-alignment: right;
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+.children-with-margin > *{
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+.header {
+    -fx-font-size: 25px;
+    -fx-font-style: italic;
+    -fx-padding: 5px 10px;
+}
+
+.main-header {
+}
+
+.sub-header {
+}
+
+.centered-content > *{
+    -fx-text-alignment: center;
+}

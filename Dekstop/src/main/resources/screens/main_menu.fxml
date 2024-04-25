@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<BorderPane prefHeight="690.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smilecounter.desktop.screens.fxml.controllers.MainMenuController">
+    <left>
+        <StackPane>
+            <FlowPane orientation="VERTICAL" styleClass="centered-content">
+                <Label styleClass="main-header" text="Smilecounter"/>
+                <Label styleClass="sub-header" text="... every smile counts!"/>
+            </FlowPane>
+        </StackPane>
+    </left>
+    <right>
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL">
+            <Button onAction="#startCamera" text="Camera view"/>
+            <Button onAction="#openSettings" text="Settings"/>
+            <Button onAction="#exitApplication" text="Exit"/>
+        </FlowPane>
+    </right>
+
+    <stylesheets>
+        <URL value="@screens.css" />
+    </stylesheets>
+</BorderPane>

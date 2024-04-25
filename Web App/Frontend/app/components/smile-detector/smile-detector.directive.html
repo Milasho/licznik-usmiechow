@@ -1,0 +1,9 @@
+<div class="smile-detector">
+	<webcam channel="ctrl.getChannel()" 
+			on-stream="ctrl.onStream(stream)"
+  			on-streaming="ctrl.onStreaming()"
+  			on-error="ctrl.onError(err)"
+	>
+	</webcam>
+	<span class="text-danger" ng-if="ctrl.isRequestQueueFull()" translate="smilesDetector.warnings.lowFramerate"></span>
+</div>

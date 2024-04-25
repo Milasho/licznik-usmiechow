@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import java.net.URL?>
+<BorderPane prefHeight="690.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smilecounter.desktop.screens.fxml.controllers.SettingsController">
+    <top>
+        <Label text="Settings" styleClass="header"/>
+    </top>
+    <center>
+        <FlowPane orientation="VERTICAL" styleClass="children-with-margin">
+            <FlowPane>
+                <Label styleClass="settingsLabel" text="Pick affective service"/>
+                <ComboBox fx:id="affectiveCombobox" promptText="Choose..."/>
+            </FlowPane>
+            <FlowPane>
+                <Label styleClass="settingsLabel" text="Select camera"/>
+                <ComboBox fx:id="cameraCombobox" promptText="Choose..."/>
+            </FlowPane>
+            <FlowPane>
+                <Label styleClass="settingsLabel" text="Enter location name"/>
+                <TextField fx:id="locationNameText"/>
+            </FlowPane>
+            <FlowPane>
+                <Label styleClass="settingsLabel" layoutX="15.0" layoutY="10.0" text="Allow saving images"/>
+                <CheckBox fx:id="permissionToSaveCheckbox"/>
+            </FlowPane>
+        </FlowPane>
+    </center>
+    <bottom>
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL">
+            <Button onAction="#saveSettings" text="Save"/>
+            <Button onAction="#backToMainMenu" text="Back"/>
+        </FlowPane>
+    </bottom>
+
+    <stylesheets>
+        <URL value="@screens.css" />
+    </stylesheets>
+</BorderPane>

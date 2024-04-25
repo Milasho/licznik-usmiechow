@@ -1,0 +1,108 @@
+.smile-detector-results{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.smile-detector-results > *{
+	width: 100%;
+}
+
+.smile-detector-results > .selected-snapshots{
+	max-height: 40%;
+}
+
+.smile-detector-results > .scroller{
+	position: relative;
+	width: 100%;
+}
+
+.smile-detector-results > .detected-snapshots{
+	flex-grow: 1;
+}
+
+.smile-detector-results .snapshot-container{
+	position: relative;
+	display: inline-block;
+}
+
+.smile-detector-results .snapshot-container::after{
+	content: "";
+	clear: both;
+	float: left;
+}
+
+.smile-detector-results .snapshot-container .snapshot{
+}
+
+.smile-detector-results .snapshot-container .face{
+	border: 1px solid #ff0000;
+	position: absolute;
+}
+
+.smile-detector-results .snapshot-container .image-container{
+	position: relative;
+	margin: 5px 0;
+	border: 1px solid transparent;
+}
+
+.smile-detector-results .snapshot-container .image-container.smiling{
+	border-color: #00ac23;
+}
+
+.smile-detector-results .snapshot-container .image-container.not-smiling{
+	border-color: #ff0000;
+}
+
+.smile-detector-results .snapshot-container .image-container .buttons{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0.3;
+	transition: 0.3s;
+	z-index: 2;
+}
+
+.smile-detector-results .snapshot-container:hover .image-container .buttons{
+	opacity: 1;
+}
+
+.smile-detector-results .snapshot-container:hover .image-container::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.3);
+}
+
+.smile-detector-results .snapshot-container .image-container .buttons > button{
+	position: absolute;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	right: 0;
+	background: #3d424e;
+	border: none;
+	color: #fff;
+	outline: none;
+	transition: 0.3s;
+}
+
+.smile-detector-results .snapshot-container .image-container .buttons > button:disabled{
+	opacity: 0.5;
+	background: #808080;
+}
+
+.smile-detector-results .snapshot-container .image-container .buttons > button.ok{
+	top: 0;
+}
+
+.smile-detector-results .snapshot-container .image-container .buttons > button.no{
+	top: 45px;
+}

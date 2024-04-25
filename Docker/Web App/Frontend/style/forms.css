@@ -1,0 +1,61 @@
+.button{
+	font-size: 17px;
+	color: #fff;
+	padding: 10px 20px;
+	margin: 2px 5px;
+	transition: 0.3s;
+	outline: none;
+	display: inline-block;
+}
+
+.button > *{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.button > .glyphicon{
+	font-size: 80%;
+	top: 0;
+}
+
+.button.button-empty{
+	background: rgba(255,255,255,0.1);
+	border: 3px solid #fff;
+	font-weight: bold;
+	text-shadow: 0 0 5px rgba(128,128,128,0.5);
+}
+
+.button.button-empty:hover{
+	background: rgba(255,255,255,0.3);
+	box-shadow: 0 0 10px rgba(128,128,128,0.3);
+}
+
+.button.button-simple{
+	border: none;
+	background: transparent;
+}
+
+.button.dark{
+	color: #808080;
+}
+
+.button.button-action{
+	border: 3px solid #808080;
+	color: #808080;
+	background: transparent;
+}
+
+.button.button-action:hover{
+
+}
+
+.button.button-empty.dark{
+	border-color: #808080;
+	text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+form input, form select{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	color: #000;
+}

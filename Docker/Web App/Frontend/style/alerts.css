@@ -1,0 +1,76 @@
+.alerts-container.overflowing{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9;
+}
+
+.alerts-container .alert{
+	margin: 0;
+	border-bottom: 1px solid transparent;
+	transition: 0.5s;
+	padding: 10px 20px;
+	border-radius: 0;
+	text-align: left;
+}
+
+.alerts-container .alert .remove{
+	opacity: 0.7;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.alerts-container .alert .icon{
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.alerts-container .alert:hover .remove{
+	opacity: 1;
+}
+
+.alerts-container .alert .title{
+	font-weight: bold;
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+.alerts-container .alert .subtitle{
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
+	display: block;
+	line-height: 10px;
+	font-style: italic;
+}
+
+.alerts-container .alert.success{
+	background: #20b740;
+    color: #fff;
+}
+
+.alerts-container .alert.success:hover{
+	background: #2c753b;
+}
+
+.alerts-container .alert.warning{
+	background: #fb9c09;
+    color: #fff;
+}
+
+.alerts-container .alert.warning:hover{
+	background: #b98029;
+}
+
+.alerts-container .alert.error{
+	background: #d60a0a;
+    color: #fff;
+}
+
+.alerts-container .alert.error:hover{
+	background: #bb0909;
+}
+

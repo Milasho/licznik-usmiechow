@@ -1,0 +1,5 @@
+<ul class="change-language">
+	<li ng-repeat="lang in ctrl.languages" ng-click="ctrl.changeLanguage(lang)" ng-class="{'selected' : ctrl.isSelected(lang)}" >
+		<img ng-src="images/languages/{{lang}}.png" alt='' title=''/>
+	</li>
+</ul>

@@ -1,0 +1,24 @@
+<div class="page-container" ng-class="::ctrl.pageClass" ng-switch="ctrl.isLoading" ng-style="::ctrl.getHomePageBackground()">
+	<div class="page-processing" ng-if="ctrl.isProcessing">
+		<spinner></spinner>
+	</div>
+	<div class="page" ng-switch-when="true">
+		<div class="page-title" ng-if="::ctrl.isTranscludeGiven('title')" ng-transclude="title"></div>
+		<spinner></spinner>
+	</div>
+	<div class="page" ng-switch-default>
+		<div class="page-title" ng-if="::ctrl.isTranscludeGiven('title')" ng-transclude="title"></div>
+		<div class="page-top" ng-if="::ctrl.isTranscludeGiven('top')" ng-transclude="top"></div>
+		<div class="page-body" ng-switch="ctrl.scrollableBody">
+			<span ng-switch-when="true">
+				<perfect-scrollbar class="page-scroller {{::ctrl.scrollClass}}" id="{{::ctrl.scrollId}}" wheel-propagation="true">
+					<div ng-transclude="body" ng-class="::ctrl.bodyClass"></div>
+				</perfect-scrollbar> 
+			</span>
+			
+			<div ng-transclude="body" ng-switch-default ng-class="::ctrl.bodyClass"></div>
+		</div>
+		<div class="page-footer" ng-if="::ctrl.isTranscludeGiven('footer')" ng-transclude="footer"></div>
+	</div>
+</div>
+

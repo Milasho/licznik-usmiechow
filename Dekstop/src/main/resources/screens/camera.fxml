@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane prefHeight="690.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smilecounter.desktop.screens.fxml.controllers.CameraController">
+    <top>
+        <BorderPane>
+            <left>
+                <StackPane>
+                    <ImageView fx:id="snapshotImage"/>
+                    <ImageView fx:id="activeEffectsImage"/>
+                    <ImageView fx:id="detectedFacesImage"/>
+                    <Label fx:id="cameraLoadingLabel" text="The camera is now loading..."/>
+                    <Label fx:id="cameraNotLoaded" text="The camera couldn't be loaded. Please check settings..." visible="false"/>
+                </StackPane>
+            </left>
+            <right>
+                <BorderPane>
+                    <top>
+                        <Label fx:id="globalSmilesCounter"/>
+                    </top>
+                    <bottom>
+                        <Button fx:id="backButton" onAction="#backToMainMenu" text="Back"/>
+                    </bottom>
+                </BorderPane>
+            </right>
+        </BorderPane>
+    </top>
+    <bottom>
+        <Label text="Here will be latest info from some server"/>
+    </bottom>
+    <stylesheets>
+        <URL value="@screens.css" />
+    </stylesheets>
+</BorderPane>

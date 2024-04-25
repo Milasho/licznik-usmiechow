@@ -1,0 +1,188 @@
+{
+	"home.page" : {
+		"title" : "Smile Counter",
+		"motto" : "... because every smile counts!",
+		"info" : "Smile counter is application that uses webcam capture to detect smiles. It is really presentation of what you can achieve with today's technology!",
+		"actions" : {
+			"showPhotos" : "Show me detected smiles",
+			"start" : "Let me try it!",
+			"download" : "Download Smilecounter"
+		}
+	},
+	"error.page" : {
+		"title": "An unexpected error has occured",
+		"info": "We are sorry, but the page you were trying to load has error. Please, be patient - our team is currently working on this!",
+		"details": "Advanced error details:"
+	},
+	"smilesCounter" : {
+		"global.title" : "Users who already shared smile with us:"
+	},
+	"smilesDetector" : {
+	 	"warnings.lowFramerate" : "<b>WARNING!</b> Your framerate is dropping really low. If you're sure your computer is handling sending webcam stream correctly, it could be problem on our side. Please try again later, the server may be having issues with too many requests."
+	},
+	"spinner.loading": "Loading, please wait...",
+	"detectedSmiles" : {
+		"title" : "Those people shared smile with us:",
+		"stats" : {
+			"info" : "Smilecounter saves informations about smiles grouped by localisations. Here are some data:",
+			"today" : "<b>{{smiles}} smiles</b> were shared with us today.",
+			"week" : "<b>{{smiles}} smiles</b> were shared with in 7 days.",
+			"month" : "<b>{{smiles}} smiles</b> were shared with in 30 days.",
+			"photos" : "Additionally, some users agreed to save exact frame of their smile to help us with improving our services. Below is our <b>hall of fame, with beautiful smiles of adorable people</b>:"
+		},
+		"ranking" : {
+			"info" : "We keep list of localisations where users are smiling the most. Below you can find more informations:",
+			"noLocalisations" : "Sorry, no localisation shared smiles with us",
+			"position" : "{{place}}. place is for <b>{{name}} location</b> where we got <b>{{smiles}} smiles</b>."
+		},
+		"noPhotos" : "Unfortunately, no one decided to share their smile with us :(",
+		"info" : {
+			"localisation" : "Localisation:"
+		},
+		"buttons" : {
+			"showMore" : "Show all {{count}} smiles"
+		}
+	},
+	"smileDetector" : {
+		"results" : {
+			"selectedSmile" : "Selected smile",
+			"detectedSmiles" : "Detected smiles ({{count}})",
+			"noDetectedSmiles" : "You haven't smiled yet!"
+		}
+	},
+	"download.page" : {
+		"title" : "Download Smilecounter application",
+		"mainInfo" : "Smilecounter comes with dedicated application for desktop systems (no additional installation is required).",
+		"benefits" : {
+			"title" : "Why should I download it?",
+			"info" : "Well, Smilecounter's main purpose is to be served as desktop application - and as desktop application it offers much more functionality.",
+			"performance" : "Running Smilecounter as desktop application with built-in services <strong>will provide much better performance</strong>. You can also test different affective services with <strong>real-time drawing of detected faces and smiles</strong>.",
+			"effects" : "Desktop application can display simple effects on camera view to encourage smiling - flashes, flying butterflies and other <strong>will make you smile more often</strong>!",
+			"standalone" : "You can change application main parameters - for example, you can change address of MongoDB database to have <strong>full control of your smiling statistics</strong>!"
+		},
+		"downloadSection" : {
+			"info" : "Before downloading, <strong>please make sure that you've selected proper system data!</strong>",
+			"summary" : "Download Smilecounter for {{system}} ({{architecture}}-bit)",
+			"moreOptions" : {
+				"show" : "Show me more options",
+				"close" : "Close more options",
+				"download.exe" : "Download .exe file",
+				"download.jar" : "Download .jar file"
+			}
+		}
+	},
+	"webcam.page" : {
+		"intro" : {
+			"title" : "Testing services detecting smile",
+			"mainInfo" : "We would like to ask you to test our implementation of services detecting smile. In order to do so, you will see three different implementations of those services - your task is to say, which one detected your smile the best.",
+			"testSummary" : "We have to test {{servicesCount}} services - for each of them you will see input from your camera and list of smiles that were detected during testing.<br/><b>No snaphsots from your camera</b> will be saved during this test - you don't have to worry about your privacy! We will save data like average response time from services, number of positive and false positive smiles and informations stored in form from you.",
+			"buttons.start" : "Lets do it!",
+			"description" : {
+				"title" : "More informations about the tests...",
+				"preinfo": "Here is how this will look:<br/>",
+				"webcam" : "On left side of the screen you will see live picture from your webcam so you can see your own face and tell if you're really smiling. Below webcam you'll have option to <b>move to another service</b> (progress in test).",
+				"detectedSmiles" : "On right part of your view there are detected smiles from your webcam. First one <b>is always moving</b> so you could see <b>how awesome you look when you're smiling!</b>. All the other ones are last displayed frame from previous smile. Services <b>should count your smiles</b>, so they should know when <b>you've stopped and started smiling</b>.",
+				"yourTask" : "... so what should I do?",
+				"taskList" : "The most important task of yours is <b>to check if services are really detecting your smiles</b>. On every detected smile you have two buttons - you can tell us if you've really smiled there by clicking on one of them.<br/>Next job to do is to check if smiles are <b>grouped by smile session</b>. Services should detect, when you've started smile and only then they should detect it as new smile.<br/>Last (but not least important) work is to <b>fill up form with questions about all those services</b>.<br/>Nothing so hard, huh?"
+			},
+			"services" : {
+				"title" : "A little more about services...",
+				"summary" : "As we have said earlier, there are <b>{{servicesCount}} different services</b> used to determine if you're smiling and one of them is created by combination of two others. You can find more informations about them below:"
+			}
+		},
+		"testing" : {
+			"title" : "Testing detecting smiles (Service {{step}} of {{stepsCount}})",
+			"mainInfo" : "You're now testing service for detecting smiles. Please remember that you need to allow your website to connect with your camera!",
+			"detectingSmilesInfo" : "On right side you'll see smiles that were detected during those tests. You can mark detected smiles as real or fake (mistake of service) using buttons on right side of each image.<br/>Other than that - enjoy yourself and make funny faces! <b>Have fun!</b>",
+			"buttons.next" : "Test next service",
+			"buttons.summary" : "Summarize test"
+		},
+		"summary" : {
+			"title" : "Testing summary",
+			"services" : {
+				"name" : "Service {{index}}",
+				"timeSpent" : "Time spent using service",
+				"averageResponseTime" : "Average service response time",
+				"averageResponseTime.value" : "{{ms}} ms",
+				"timeSpent.value" : "{{ms / 1000}} sec",
+				"detectedSmiles" : "Detected smiles:",
+				"realSmiles" : "Smiles set as real smiles:",
+				"notConfirmedSmiles" : "Smiles set as fake smiles:",
+				"fakeSmiles" : "Smiles not confirmed:"
+			},
+			"form" : {
+				"title" : "Form",
+				"info" : "Please answer below questions about each service you have tested (it will take only few minutes). It will help us make better product in the future.",
+				"fields.generalDetection" : "Did the smile detection deal with most of your smiles?",
+				"fields.smileTypes" : "What types of smiles did the smile detection detect?",
+				"fields.additionalData" : "Please summarize smile detection with this service (are you pleased with the results?):",
+				"fields.generalQuestions" : "General questions",
+				"fields.gender" : "Gender",
+				"fields.age" : "Age",
+				"fields.groupingSmiles" : "Do you think services grouped smiles correctly?",
+				"fields.affectiveFuture" : "What do you think about smile detection? Will it be useful in the future?",
+				"fields.sayMore" : "Where you would like to see smile detection? Are you using applications with this functionality?",
+				"answers": {
+					"yes" : "Yes",
+					"ratherYes" : "Rather yes",
+					"ratherNot" : "Rather not",
+					"no" : "Certainly not",
+					"smileTypes" : {
+						"wideOpen" : "Wide open smiles (visible gums and teeth)",
+						"open" : "Open smiles (visible teeth)",
+						"closed" : "Closed smiles (teeth and gums not visible)",
+						"nothing" : "It wasn't detecting any smiles of mine"
+					},
+					"gender" : {
+						"man" : "Man",
+						"woman" : "Woman"
+					},
+					"affectiveFuture" : {
+						"yes" : "Yes, I think it will be used in many applications",
+						"maybe" : "I didn't think/heard about it until now",
+						"no" : "No, I don't think information about user's smiles are useful for applications"
+					}
+				},
+				"buttons.send" : "Send"
+			}
+		},
+		"sending" : {
+			"title" : "Smiles marked by you as real",
+			"text" : "Below are all smiles that you've <b>set as real</b>, we will use them to increase our global smile counter",
+			"selecting" : "If you want to help us improve our services, you can select (by clicking on them) snapshots that should be stored with photo - <b>no snapshots are sent with photo by default</b>, so you don't have to worry about your privacy.<br/>Selected snapshots will also appear on our <b>Hall of fame</b> on home page, so pick ones where your smile is most beautiful!",
+			"buttons.send" : "Send",
+			"buttons.noSend" : "Don't save any snapshots"
+		},
+		"results": {
+			"yourStats" : "Statistics from your tests",
+			"summary" : {
+				"generalDetection" : {
+					"0" : "You think that this service is working great - it found almost all of your smiles.",
+					"1" : "You think that this service is working decently - it found most of your smiles.",
+					"2" : "You think that this service has its problems - some of smiles were found, but not that much.",
+					"3" : "You think that this service is simply not working - almost none of your smiles were detected."
+				},
+				"smileTypes" : {
+					"noSmiles" : "You selected that this service was not detecting any types of smiles.",
+					"smiles" : "You selected that this service was detecting {{types}} smiles.",
+					"wideOpen" : "wide open",
+					"open" : "open",
+					"closed" : "closed",
+					"and" : " and "
+				},
+				"noInfo" : "You didn't tell us anything about this service."
+			}
+		}
+	},
+	"navbar" : {
+		"download" : "Download Smilecounter on desktop",
+		"testServices" : "Perform services test",
+		"applicationName" : "Smilecounter"
+	},
+	"smiles.chart": {
+		"smiles.title" : "Smiles from {{days}} days before to today",
+		"smiles.noSmiles" : "There are no smiles to be tracked... Yet.",
+		"services.title" : "Statistics from test services",
+		"photos.title" : "Smiles with and without photos"
+	}
+}

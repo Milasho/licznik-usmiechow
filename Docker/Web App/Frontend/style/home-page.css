@@ -1,0 +1,59 @@
+.page-container.home .welcome-screen{
+	background: no-repeat center center;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+	padding: 5% 0;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-container.home .welcome-screen .change-language{
+	position: absolute;
+	top: 10px; 
+	right: 10px;
+}
+
+.page-container.home .welcome-screen .smiles-counter{
+	margin: 15px 0;
+}
+
+.page-container.home .welcome-screen > .application-info{
+	display: inline-block;
+	border: 3px solid #fff;
+	padding: 20px;
+}
+
+.page-container.home .welcome-screen > .application-info h1,
+.page-container.home .welcome-screen > .application-info h2{
+	margin: 0;
+}
+
+.page-container.home .welcome-screen > .application-info h1,
+.page-container.home .welcome-screen > .application-info h2,
+.page-container.home .welcome-screen > .application-info p,
+.page-container.home .welcome-screen .smiles-counter h3{
+	color: #fff;
+}
+
+.page-container.home .welcome-screen > .application-info .main-icon{
+	width: 40%;
+}
+
+.page-container.home .welcome-screen > .application-info p{
+	max-width: 300px;
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+.page-container.home .detected-smiles{
+	padding: 10px 0 30px;
+}
+
+.page-container.home .chart-smaller{
+	padding: 0 20%;
+	margin: 25px 0;
+}

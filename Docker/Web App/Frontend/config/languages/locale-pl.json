@@ -1,0 +1,188 @@
+{
+  "home.page" : {
+    "title" : "Smile Counter",
+    "motto" : "... bo każdy uśmiech się liczy!",
+    "info" : "Smilecounter (Licznik uśmiechów) to aplikacja, która używa kamerki internetowej do wykrywania uśmiechów. Poczuj, jak rozwinęła się technologia!",
+    "actions" : {
+      "showPhotos" : "Pokaż wykryte uśmiechy",
+      "start" : "Chcę spróbować!",
+      "download" : "Pobierz Smilecounter"
+    }
+  },
+  "error.page" : {
+    "title": "An unexpected error has occured",
+    "info": "We are sorry, but the page you were trying to load has error. Please, be patient - our team is currently working on this!",
+    "details": "Advanced error details:"
+  },
+  "smilesCounter" : {
+    "global.title" : "Użytkownicy, którzy już podzielili się z nami uśmiechem:"
+  },
+  "smilesDetector" : {
+    "warnings.lowFramerate" : "<b>WARNING!</b> Your framerate is dropping really low. If you're sure your computer is handling sending webcam stream correctly, it could be problem on our side. Please try again later, the server may be having issues with too many requests."
+  },
+  "spinner.loading": "Ładowanie, proszę czekać...",
+  "detectedSmiles" : {
+    "title" : "Ci ludzie już się dla nas uśmiechnęli...",
+    "stats" : {
+      "info" : "Smilecounter zapisuje informacje o uśmiechach, grupując je po lokalizacji. Poniżej znajduje się kilka ciekawych informacji...",
+      "today" : "<b>{{smiles}} uśmiechów</b> wykryto dzisiaj.",
+      "week" : "<b>{{smiles}} uśmiechów</b> wykryto w ciągu 7 dni.",
+      "month" : "<b>{{smiles}} uśmiechów</b> wykryto przez miesiąc.",
+      "photos" : "Dodatkowo, niektórzy użytkownicy zgodzili się zachować na pamiątkę moment, w którym pokazali swój cudowny uśmiech, dzięki czemu możemy rozwijać oprogramowanie w lepszym kierunku. Poniżej znajdziesz te <b>wspaniałe uśmiechy wyjątkowych ludzi:</b>"
+    },
+    "ranking" : {
+      "info" : "Przechowujemy listę lokalizacji, w których użytkownicy uśmiechają się najchętniej. Więcej informacji znajdziesz poniżej:",
+      "noLocalisations" : "Żadna lokalizacja nie podzieliła się jeszcze uśmiechem.",
+      "position" : "{{place}}. miejsce należy do lokalizacji <b>{{name}}</b>, gdzie uśmiechnięto się <b>{{smiles}} razy</b>."
+    },
+    "noPhotos" : "Niestety nikt nie ośmielił się podzielić z nami uśmiechem :(",
+    "info" : {
+      "localisation" : "Lokalizacja:"
+    },
+    "buttons" : {
+      "showMore" : "Pokaż wszystkie {{count}} uśmiechy"
+    }
+  },
+  "smileDetector" : {
+    "results" : {
+      "selectedSmile" : "Zaznaczone uśmiechy",
+      "detectedSmiles" : "Wykryte uśmiechy: ({{count}})",
+      "noDetectedSmiles" : "Jeszcze się nie uśmiechnąłeś!"
+    }
+  },
+  "download.page" : {
+    "title" : "Pobierz aplikację Smilecounter",
+    "mainInfo" : "Główną postacią Smilecountera jest aplikacja desktopowa dla komputerów stacjonarnych (nie wymaga to żadnej instalacji).",
+    "benefits" : {
+      "title" : "Dlaczego powinienem pobrać Smilecountera?",
+      "info" : "Cóż, jego głównym celem jest bycie uruchamianym jako aplikacja desktopowa - a to oznacza, że w tej wersji ma znacznie więcej funkcjonalności.",
+      "performance" : "Uruchamianie Smilecountera jako aplikacja na komputer sprawi, że będzie on znacznie wydajniej wykrywał uśmiechy. Dzieje się tak ze względu <b>na wbudowane usługi detekcji</b>, co pozwala na pracę w czasie rzeczywistym.",
+      "effects" : "Aplikacja dekstopowa ma wbudowanych mnóstwo efektów zachęcających do uśmiechu. <b>Motylki, broda, włosy...</b> Czego więcej chcieć?",
+      "standalone" : "Możesz do woli zmieniać parametry konfiguracyjne programu - na przykład, jeżeli chcesz postawić <b>własną bazę uśmiechów</b>, możesz to zrobić przy pomocy prostego pliku!"
+    },
+    "downloadSection" : {
+      "info" : "Przed probraniem upewnij się, że <strong>wybrałeś poprawną wersję systemu operacyjnego!</strong>",
+      "summary" : "Pobierz Smilecounter dla {{system}} ({{architecture}}-bit)",
+      "moreOptions" : {
+        "show" : "Pokaż więcej opcji",
+        "close" : "Ukryj opcje",
+        "download.exe" : "Pobierz plik .exe",
+        "download.jar" : "Pobierz plik .jar"
+      }
+    }
+  },
+  "webcam.page" : {
+    "intro" : {
+      "title" : "Testy usług wykrywających uśmiech",
+      "mainInfo" : "Chcielibyśmy zaprosić Cię do przetestowania wykrywania uśmiechu przez nasze usługi. W tym celu przejdziesz przez różne implementacje usług - Twoim zadaniem będzie ocena, która z nich poradziła sobie z wyznaczonym zadaniem najlepiej.",
+      "testSummary" : "Musimy przetestować {{servicesCount}} usługi - dla każdej z nich zobaczysz obraz ze swojej kamerki internetowej oraz listę uśmiechów, jakie zostały wykryte podczas tego testu.<br/>Pamiętaj, że <b>żadno Twoje zdjęcie nie zostanie zapisane</b> w trakcie trwania testu - nie chcielibyśmy naruszyć Twojej prywatności! Zapiszemy jedynie bardzo techniczne dane o liczbie wykrytych uśmiechów, średnim czasie odpowiedzi z usług, o liczbie uśmiechów prawidłowo i błędnie wykrytych...",
+      "buttons.start" : "Zaczynajmy!",
+      "description" : {
+        "title" : "Więcej informacji o testach...",
+        "preinfo": "Na czym polegają testy?<br/>",
+        "webcam" : "Po lewej stronie ekranu pokaże się aktualny obraz z kamerki - czyli Twój piękny uśmiech! Dzięki temu będziesz mógł zobaczyć, czy faktycznie się uśmiechasz. Poniżej kamerki będziesz mógł przejść do następnej usługi.",
+        "detectedSmiles" : "Po prawej stronie ekranu znajduje się lista wykrytych uśmiechów na podstawie obrazu z Twojej kamerki. Pierwsze zdjęcie <b>zawsze się będzie ruszać</b>, żebyś mógł ocenić, czy usługa prawidłowo wykryła początek i koniec uśmiechu. Pozostałe uśmiechy prezentowane są w formie pojedynczej klatki.",
+        "yourTask" : "... to co ja mam zrobić?",
+        "taskList" : "Najważniejszym Twoim zadaniem jest <b>ocena, czy usługi prawidłowo wykrywają uśmiechy</b> Na każdym wykrytym uśmiechu <b>znajdują się dwa przyciski</b>, które pozwalają na określenie, czy uśmiech nie jest błędem usługi. <br/>Kolejnym zadaniem jest ocena, czy usługa <b>prawidłowo wykrywa początek i koniec uśmiechu</b>.<br/>Na koniec testow będziesz poproszony o wypełnienie formularza, którego uzupełnienie zajmie <b>maksymalnie 5 minut</b>.<br/>Nic nadzwyczajnie trudnego, co nie?"
+      },
+      "services" : {
+        "title" : "Ciut więcej o usługach detekcji uśmiechu...",
+        "summary" : "Tak jak mówiliśmy wcześniej, musimy przetestować <b>{{servicesCount}} różnych usług</b>, któe służą do wykrywania uśmiechu. Jedna z nich powstała poprzez połączenie pozostałych. Więcej informacji na temat bibliotek służących do detekcji emocji znajdziesz poniżej:"
+      }
+    },
+    "testing" : {
+      "title" : "Testowanie działania usług (Krok {{step}} z {{stepsCount}})",
+      "mainInfo" : "Jesteś w trakcie testów usługi. Pamiętaj o zezwoleniu naszej aplikacji na dostęp do swojej kamerki!",
+      "detectingSmilesInfo" : "Proszę, pamiętaj o oznaczaniu uśmiechów jako prawidłowo lub błędnie wykryte.<br/>Możesz zaczynać! <b>Miłej zabawy!</b>",
+      "buttons.next" : "Przetestuj następną usługę",
+      "buttons.summary" : "Podsumuj test"
+    },
+    "summary" : {
+      "title" : "Podsumowanie testów",
+      "services" : {
+        "name" : "Usługa {{index}}",
+        "timeSpent" : "Czas spędzony na testowaniu usługi",
+        "averageResponseTime" : "Średni czas odpowiedzi z usługi",
+        "averageResponseTime.value" : "{{ms}} ms",
+        "timeSpent.value" : "{{ms / 1000}} s",
+        "detectedSmiles" : "Wykrytych uśmiechów:",
+        "realSmiles" : "Uśmiechy oznaczone jako prawdziwe:",
+        "notConfirmedSmiles" : "Uśmiechy oznaczone jako błędne:",
+        "fakeSmiles" : "Uśmiechy niepotwierdzone:"
+      },
+      "form" : {
+        "title" : "Formularz",
+        "info" : "Prosimy o uzupełnienie prostego formularza (zajmie to tylko kilka minut). Dzięki niemu będziemy mogli poprawić działanie naszych usług.",
+        "fields.generalDetection" : "Czy usługa poprawnie wykryła większość Twoich uśmiechów?",
+        "fields.smileTypes" : "Jakie typy uśmiechów zostały wykryte?",
+        "fields.additionalData" : "Podsumuj swoje wrażenia dotyczące działania tej usługi:",
+        "fields.generalQuestions" : "Pytania ogólne",
+        "fields.gender" : "Płeć",
+        "fields.age" : "Wiek",
+        "fields.groupingSmiles" : "Czy Twoim zdaniem usługi poprawnie grupowały długi uśmiech?",
+        "fields.affectiveFuture" : "Co sądzisz o usługach procesowania emocji przez komputer? Czy będą w przyszłości wykorzystywane?",
+        "fields.sayMore" : "Gdzie będą wykorzystywane takie usługi? Czy korzystasz z jakichś aplikacji, które już z nich korzystają?",
+        "answers": {
+          "yes" : "Tak",
+          "ratherYes" : "Raczej tak",
+          "ratherNot" : "Raczej nie",
+          "no" : "Z pewnością nie",
+          "smileTypes" : {
+            "wideOpen" : "Uśmiechy szeroko otwarte (zęby + dziąsła)",
+            "open" : "Uśmiechy otwarte (widoczne zęby)",
+            "closed" : "Uśmiechy zamknięte (brak dziąseł oraz zębów)",
+            "nothing" : "Nie wykrywała żadnych uśmiechów"
+          },
+          "gender" : {
+            "man" : "Mężczyzna",
+            "woman" : "Kobieta"
+          },
+          "affectiveFuture" : {
+            "yes" : "Tak, myślę, że będą często wykorzystywane w aplikacjach.",
+            "maybe" : "Nie wiem",
+            "no" : "Nie, myślę, że to tylko chwilowe zainteresowanie nową technologią"
+          }
+        },
+        "buttons.send" : "Wyślij"
+      }
+    },
+    "sending" : {
+      "title" : "Uśmiechy oznaczone jako prawdziwe",
+      "text" : "Poniżej znajduje się lista uśmiechów <b>oznaczonych jako prawdziwe</b>. Użyjemy ich do zwiększenia naszego licznika uśmiechów!",
+      "selecting" : "Jeżeli chcesz pomóc nam rozwijać naszą aplikację, <b>możesz zapisać wykryte uśmiechy do bazy danych</b>. Tylko zaznaczone przez Ciebie uśmiechy zostaną zapisane (nie musisz więc się martwić o swoją prywatność - niczego nie zrobimy bez Twojej wiedzy!) i wyświetlone na naszej stronie głównej, dlatego wybierz swój najpiękniejszy uśmiech!",
+      "buttons.send" : "Wyślij",
+      "buttons.noSend" : "Nie zapisuj żadnego zdjęcia"
+    },
+    "results": {
+      "yourStats" : "Statystyki z Twoich testów",
+      "summary" : {
+        "generalDetection" : {
+          "0" : "Zgodnie z Twoim zdanie, usługa działa świetnie - wykryła prawie wszystkie uśmiechy.",
+          "1" : "Uważasz, że usługa działa poprawnie - wykrywa większość Twoich uśmiechów.",
+          "2" : "Według Ciebie usługa działa przeciętnie, ponieważ wykrywa tylko część Twoich uśmiechów.",
+          "3" : "Zaznaczyłeś, że ta usługa nie działa poprawnie - prawie żaden uśmiech nie został wykryty."
+        },
+        "smileTypes" : {
+          "noSmiles" : "Twoim zdaniem usługa nie wykrywała żadnych rodzajów uśmiechów.",
+          "smiles" : "Spośród dostępnych opcji wybrałeś, że usługa wykrywała uśmiechy {{types}}.",
+          "wideOpen" : "szeroko otwarte",
+          "open" : "otwarte",
+          "closed" : "zamknięte",
+          "and" : " oraz "
+        },
+        "noInfo" : "Nie wyraziłeś swojego zdania na temat tej usługi."
+      }
+    }
+  },
+  "navbar" : {
+    "download" : "Pobierz Smilecounter",
+    "testServices" : "Przetestuj usługi detekcji uśmiechu",
+    "applicationName" : "Smilecounter"
+  },
+  "smiles.chart": {
+    "smiles.title" : "Wykryte uśmiechy na przestrzeni poprzednich {{days}} dni",
+    "smiles.noSmiles" : "Nie ma jeszcze wykrytychuśmiechów.",
+    "services.title" : "Statystyki z testów usług",
+    "photos.title" : "Uśmiechy z i bez zdjęcia"
+  }
+}

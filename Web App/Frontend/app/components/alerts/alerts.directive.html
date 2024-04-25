@@ -1,0 +1,16 @@
+<div class='alerts-container' ng-class="{'overflowing' : ctrl.overflowing == true}">
+	<div class='alert' ng-repeat='alert in ctrl.alerts' ng-class="alert.type">
+		<div class="media">
+			<div class='media-left media-middle'>
+				<span class='icon glyphicon' ng-class="ctrl.getIconForAlert(alert)"></span>
+			</div>
+			<div class='media-body media-middle'>
+				<span class='title' translate="{{alert.title}}" translate-values="{{alert.titleParams}}"></span>
+				<span class='subtitle' translate="{{alert.subtitle}}" translate-values="{{alert.subtitleParams}}"></span>
+			</div>
+			<div class='media-right media-middle'>
+				<span class='remove glyphicon glyphicon-remove' ng-click="ctrl.removeAlert(alert)"></span>
+			</div>
+		</div>
+	</div>
+</div>

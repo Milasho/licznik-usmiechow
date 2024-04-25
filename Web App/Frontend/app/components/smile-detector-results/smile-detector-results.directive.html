@@ -1,0 +1,25 @@
+<div class="smile-detector-results">
+	<section class="results-info">
+		<h3 translate="smileDetector.results.detectedSmiles" translate-value-count="{{ctrl.getAllDetectedSmilesCount()}}"></h3>
+		<p ng-if="ctrl.detectedSmiles.length == 0" translate="smileDetector.results.noDetectedSmiles"></p>
+	</section>
+	<perfect-scrollbar class="detected-snapshots scroller text-center" wheel-propagation="true" ng-if="ctrl.detectedSmiles.length > 0">
+		<spinner ng-if="ctrl.newImageProcessing()"></spinner>
+		<div ng-repeat="smile in ctrl.detectedSmiles" ng-click='ctrl.selectImage(smile)'>
+			<div class="clickable snapshot-container">
+				<div class="image-container" ng-switch="$index" ng-class="{'smiling' : smile.smiling === true, 'not-smiling': smile.smiling === false}">
+					<div class="buttons">
+						<button class="glyphicon glyphicon-ok ok" title="This is smile"
+								ng-click="ctrl.isSmileSmiling(smile, true)" ng-disabled="smile.smiling === true"></button>
+						<button class="glyphicon glyphicon-remove no" title="I'm not smiling here"
+								ng-click="ctrl.isSmileSmiling(smile, false)"  ng-disabled="smile.smiling === false"></button>
+					</div>
+					<span ng-switch-when="0">
+					<img class="snapshot"  ng-animate-swap="smile.index" ng-src="{{smile.src[smile.index]}}" alt=""/>
+				</span>
+					<img class="snapshot" ng-switch-default ng-src="{{smile.src[0]}}" alt=""/>
+				</div>
+			</div>
+		</div>
+	</perfect-scrollbar> 
+</div>

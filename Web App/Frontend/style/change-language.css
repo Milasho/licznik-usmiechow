@@ -1,0 +1,27 @@
+.change-language{
+	list-style: none;
+	margin: 10px 0;
+	display: inline-block;
+}
+
+.change-language > li{
+	display: inline-block;
+	margin: 0 5px;
+	border: 1px solid;
+	transition: border 0.3s;
+}
+
+.change-language > li:not(.selected){
+	cursor: pointer;
+	border-color: #fff;
+}
+
+.change-language > li.selected{
+	border-color: #000;
+}
+
+.change-language > li img{
+	margin: 0;
+	padding: 0;
+	float: left;
+}

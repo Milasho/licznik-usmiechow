@@ -1,0 +1,113 @@
+.page-container.webcam-page .webcam-container{
+	width: 60%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.page-container.webcam-page .webcam-container .webcam-live{
+	width: 100%!important;
+	height: auto!important;
+}
+
+.page-container.webcam-page h3.main-title{
+	border-bottom: 1px solid #808080;
+	padding: 10px;
+	margin: 0;
+}
+
+.page-container.webcam-page .webcam-content{
+	padding: 0 15px;
+}
+
+.page-container.webcam-page .webcam-content .webcam-container{
+	background: #000;
+	width: auto;
+	padding: 5px 20%;
+}
+
+.page-container.webcam-page .webcam-content .webcam-container .smile-detector{
+
+}
+
+.page-container.webcam-page .test-summary .test-result{
+	padding: 0 15px;
+	margin: 5px 0;
+}
+
+.page-container.webcam-page .test-summary .test-result > h4{
+	margin-left: -15px;
+	padding: 7px 0;
+	display: inline-block;
+}
+
+.page-container.webcam-page .test-summary form .service-form{
+	border: 1px solid #d4cfdc;
+	padding: 0 0 0 20px;
+	margin: 15px 0;
+}
+
+.page-container.webcam-page .test-summary form .service-form textarea{
+	width: 95%;
+}
+
+.page-container.webcam-page .test-summary form .service-form > *:not(h4){
+	margin-left: 25px;
+}
+
+.page-container.webcam-page .test-summary form h4{
+	color: #3d424e;
+	font-size: 25px;
+	margin: 15px 0;
+}
+
+.page-container.webcam-page h5{
+	color: #278eca;
+	font-weight: bold;
+}
+
+.page-container.webcam-page .services-list{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.page-container.webcam-page .services-list > a img{
+	max-height: 100px;
+	margin: 5px 15px;
+}
+
+.page-container.webcam-page .smiling-snapshots .snapshot{
+	padding: 50% 0;
+	margin: 10px;
+	background: #000 no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	position: relative;
+	transition: 0.3s;
+}
+
+.page-container.webcam-page .smiling-snapshots .snapshot::after{
+	content: "";
+	font-size: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.5);
+	transition: 0.3s;
+}
+
+.page-container.webcam-page .smiling-snapshots .snapshot.selected{
+	box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.page-container.webcam-page .smiling-snapshots .snapshot.selected::after{
+	background: rgba(0,0,0,0);
+}

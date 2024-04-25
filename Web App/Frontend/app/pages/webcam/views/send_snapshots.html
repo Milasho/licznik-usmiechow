@@ -1,0 +1,42 @@
+<div class="smiling-snapshots full-height">
+    <page scrollable-body="true">
+        <page-title>
+            <div class="row">
+                <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+                <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-justify">
+                    <h3 translate="webcam.page.sending.title"></h3>
+                    <p translate="webcam.page.sending.text"></p>
+                    <p translate="webcam.page.sending.selecting"></p>
+                </div>
+                <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+            </div>
+        </page-title>
+        <page-body>
+            <div class="row">
+                <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+                <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 text-justify">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"
+                             ng-repeat="snapshot in ::ctrl.handlers.confirmedSmiles"
+                             ng-click="ctrl.persmissionsToSave[$index] = !ctrl.persmissionsToSave[$index]">
+                            <div class="snapshot" ng-class="{'selected': ctrl.persmissionsToSave[$index]}"
+                                 ng-style="{'background-image': 'url(' + snapshot + ')'}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+            </div>
+        </page-body>
+        <page-footer>
+            <div class="buttons text-center">
+                <button type="button" class="button button-action" ng-click="ctrl.saveSnapshots(true)">
+                    <span translate="webcam.page.sending.buttons.send"></span>
+                </button>
+
+                <button type="button" class="button button-action" ng-click="ctrl.saveSnapshots(false)">
+                    <span translate="webcam.page.sending.buttons.noSend"></span>
+                </button>
+            </div>
+        </page-footer>
+    </page>
+</div>

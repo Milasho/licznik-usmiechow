@@ -1,0 +1,27 @@
+<div class="row full-height">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-left">
+        <div class="webcam-content">
+            <h3 class="main-title" translate="webcam.page.testing.title" translate-value-step="{{ctrl.step + 1}}"
+                translate-value-steps-count="{{ctrl.servicesOrder.length}}"></h3>
+            <div class="detecting-info">
+                <p translate="webcam.page.testing.mainInfo"></p>
+                <p translate="webcam.page.testing.detectingSmilesInfo"></p>
+            </div>
+            <div class="webcam-container">
+                <smile-detector on-smile-detected="ctrl.handlers.onNewSnapshot" service-name="{{ctrl.servicesOrder[ctrl.step]}}"></smile-detector>
+            </div>
+
+            <section class="buttons text-center" ng-switch="ctrl.step + 1 < ctrl.servicesOrder.length">
+                <button class="button button-action" ng-click="ctrl.goToNextStep()" ng-switch-when="true">
+                    <span translate="webcam.page.testing.buttons.next"></span>
+                </button>
+                <button class="button button-action" ng-click="ctrl.goToSummary()" ng-switch-default>
+                    <span translate="webcam.page.testing.buttons.summary"></span>
+                </button>
+            </section>
+        </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 full-height">
+        <smile-detector-results handlers="ctrl.handlers"></smile-detector-results>
+    </div>
+</div>

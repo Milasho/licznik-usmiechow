@@ -1,0 +1,41 @@
+<page is-loading="false" scrollable-body="true" page-class="home" scroll-id="home-scroller">
+	<page-body>
+		<section class="welcome-screen" ng-style="::{'background-image' : 'url(' + ctrl.background + ')'}">
+			<change-language></change-language>
+			
+			<div class="application-info">
+				<h1 translate="home.page.title"></h1>
+				<object class='main-icon' data="images/logo.svg" type="image/svg+xml">
+					<img src="images/logo.svg" />
+				</object>
+				<h2 translate="home.page.motto"></h2>
+				
+				<p translate="home.page.info"></p>
+			</div>
+			
+			<div class="additional-data">
+				<smiles-counter positions="8"></smiles-counter>
+				
+				<div class="buttons">
+					<button class="button button-empty" ui-sref="webcam">
+						<span translate="home.page.actions.start"></span>
+					</button>
+					<button class="button button-empty" scroll-to="recent-photos" container-id="home-scroller">
+						<span translate="home.page.actions.showPhotos"></span>
+						<span class="glyphicon glyphicon-menu-right"></span>
+					</button>
+					<button class="button button-empty" ui-sref="download">
+						<span translate="home.page.actions.download"></span>
+						<span class="glyphicon glyphicon-menu-right"></span>
+					</button>
+				</div>
+			</div>
+		</section>
+		<section class="screen-part tinted">
+			<smiles-chart days-before="30"></smiles-chart>
+		</section>
+		<section class="recent-photos" id="recent-photos">
+			<detected-smiles max-images="8"></detected-smiles>
+		</section>
+	</page-body>
+</page>

@@ -1,0 +1,63 @@
+<page is-loading="false" scrollable-body="true" page-class="download">
+	<page-title>
+		<navbar></navbar>
+	</page-title>
+	<page-body>
+		<section class="screen-part tinted">
+			<p translate="download.page.downloadSection.info"></p>
+			<form class="form-horizontal">
+				<p>
+					<span>Warning: Since this hosting doesn't allow any .zip packages, please <a href="https://drive.google.com/drive/folders/0B2qhZHLIgfTRUWtNTlpJQlR5QUU"><strong>download them from here</strong></a></span>
+				</p>
+				<div class="form-group">
+					<select name="architecture" ng-model="ctrl.system" ng-options="system for system in ctrl.systems"></select>
+					<select name="architecture" ng-model="ctrl.architecture" ng-options="(arch + '-bit') for arch in [ctrl.architectures.x32, ctrl.architectures.x64]"></select>
+				</div>
+				<div class="buttons">
+					<a ng-href="/files/Smilecounter-{{ctrl.system}}{{ctrl.architecture}}bit.zip" target="_self" class="button button-empty">
+						<span translate="download.page.downloadSection.summary" translate-value-system="{{ctrl.system}}" translate-value-architecture="{{ctrl.architecture}}"></span>
+					</a>
+				</div>
+				<section class="more-options" ng-switch="ctrl.moreOptionsVisible">
+					<button ng-switch-default class="button button-simple" ng-click="ctrl.toggleMoreOptions()">
+						<span translate="download.page.downloadSection.moreOptions.show"></span>
+						<span class="glyphicon glyphicon-menu-down"></span>
+					</button>
+					<div ng-switch-when="true">
+						<div>
+							<a href="/files/SmileCounter.zip" target="_self">
+								<span translate="download.page.downloadSection.moreOptions.download.exe"></span>
+							</a>
+							<a href="/files/SmileCounter_jar.zip" target="_self">
+								<span translate="download.page.downloadSection.moreOptions.download.jar"></span>
+							</a>
+						</div>
+
+						<button class="button button-simple" ng-click="ctrl.toggleMoreOptions()">
+							<span translate="download.page.downloadSection.moreOptions.close"></span>
+							<span class="glyphicon glyphicon-menu-up"></span>
+						</button>
+					</div>
+				</section>
+			</form>
+		</section>
+		<div class="row">
+			<div class="hidden-xs col-sm-1 col-md-2 col-lg-3"></div>
+			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 text-left">
+				<section class="screen-part">
+					<h2 translate="download.page.title"></h2>
+					<p translate="download.page.mainInfo"></p>
+					<h3 translate="download.page.benefits.title"></h3>
+					<img src="images/download/appscreen.png" title="" alt="Smilecounter screen"/>
+					<p translate="download.page.benefits.info"></p>
+					<ul>
+						<li translate="download.page.benefits.performance"></li>
+						<li translate="download.page.benefits.effects"></li>
+						<li translate="download.page.benefits.standalone"></li>
+					</ul>
+				</section>
+			</div>
+			<div class="hidden-xs col-sm-1 col-md-2 col-lg-3"></div>
+		</div>
+	</page-body>
+</page>

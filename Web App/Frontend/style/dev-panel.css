@@ -1,0 +1,46 @@
+/* Dev panel */
+.dev-panel{
+	padding: 0 20px;
+	opacity: 0.2;
+	transition: opacity 0.3s;
+}
+
+.dev-panel:hover{
+	opacity: 1;
+}
+
+.dev-panel .counter{
+ 	display: inline-block;
+    background: rgba(0,0,0,0.3);
+    color: #00fd2d;
+    border: 1px solid #00fd2d;
+    padding: 2px 7px;
+    cursor: pointer;
+    margin: 0 2px;
+    transition: 0.5s;
+}
+
+.dev-panel .counter.warning{
+	border-color: #ff0000;
+	color: #ff0000;
+}
+
+.dev-panel .control-button{
+	display: inline-block;
+	color: #00fd2d;
+	background: transparent;
+	border: none;
+	padding: 0 10px;
+	transition: 0.5s;
+}
+
+.dev-panel .disabled .counter, .dev-panel .disabled .control-button{
+	transition: 0.5s;
+    color: #8e948f;
+    border-color: #8e948f;
+    cursor: not-allowed;
+}
+
+.dev-panel .disabled .counter.red{
+   background: rgba(0,0,0,0.3);
+}

@@ -1,0 +1,68 @@
+.page-container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.page-container > .page-processing{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999999;
+	background: rgba(255,255,255,0.6);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-container > .page{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.page-container > .page > .page-body{
+	flex-grow: 1;
+	position: relative;
+}
+
+.page-container > .page > .page-body .page-scroller{
+	height: 100%;
+	overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.page-container > .page > .page-body .page-scroller > .ps-scrollbar-x-rail,
+.page-container > .page > .page-body .page-scroller > .ps__scrollbar-x-rail{
+	display: none;
+}
+
+.page-container > .page > .page-body .page-scroller > div, 
+.page-container > .page > .page-body .page-scroller > div > div{
+	height: 100%;
+}
+
+.page .screen-part{
+	padding: 10px;
+}
+
+.page .screen-part.tinted{
+	background: #278eca;
+	color: #fff;
+	padding: 30px 10px;
+}
+
+.page .screen-part > img{
+	width: 100%;
+	margin: 10px;
+}
+
+.page .screen-part.tinted a{
+	color: #fff;
+	display: inline-block;
+	margin: 5px 10px;
+}
