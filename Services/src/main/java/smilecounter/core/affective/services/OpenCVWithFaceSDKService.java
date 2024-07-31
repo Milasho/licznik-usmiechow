@@ -17,8 +17,10 @@ import java.util.List;
 
 @ApplicationScoped
 public class OpenCVWithFaceSDKService implements AffectiveService {
-    @Inject private OpenCVService openCVService;
-    @Inject private FaceSDKService faceSDKService;
+    @Inject
+    private OpenCVService openCVService;
+    @Inject
+    private FaceSDKService faceSDKService;
 
     public void init(){
        openCVService.init();
